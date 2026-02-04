@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sản phẩm</title>
+<style>
+body { font-family: Arial; }
+.products { display: flex; gap: 10px; flex-wrap: wrap; }
+.card { border: 1px solid #ccc; padding: 10px; width: 150px; }
+</style>
+</head>
+<body>
+
+<input type="text" id="search" placeholder="Tìm sản phẩm">
+<p id="error" style="color:red"></p>
+<div class="products" id="list"></div>
+
+<script>
+const products = ["iPhone", "Samsung", "Oppo", "Xiaomi", "Nokia"];
+const list = document.getElementById("list");
+
+function render(data) {
+  list.innerHTML = "";
+  data.forEach(p => {
+    list.innerHTML += `<div class="card">${p}</div>`;
+  });
+}
+
+render(products);
+
+document.getElementById("search").addEventListener("input", e => {
+  const keyword = e.target.value.toLowerCase().trim();
+  const result = products.filter(p =>
+    p.toLowerCase().includes(keyword)
+  );
+  document.getElementById("error").textContent =
+    result.length ? "" : "Không tìm thấy sản phẩm";
+  render(result);
+});
+</script>
+</body>
+</html>
+<nav>
+  <a href="c:\Users\nhatn\Downloads\BaiTap14.html.html">Home</a>
+  <a href="c:\Users\nhatn\Downloads\BaiTap14.html.html">Bài tập 14</a>
+</nav>

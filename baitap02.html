@@ -1,0 +1,32 @@
+<form id="form">
+  <input type="text" id="name" placeholder="Tên" required>
+  <input type="email" id="email" placeholder="Email" required>
+  <input type="password" id="password" placeholder="Mật khẩu" required>
+  <label><input type="checkbox" id="agree"> Đồng ý</label>
+  <button>Đăng ký</button>
+</form>
+<p id="msg"></p>
+
+<script>
+form.addEventListener("submit", e => {
+  e.preventDefault();
+
+  const email = form.email.value;
+  const pass = form.password.value;
+  const validPass = /(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}/;
+
+  if (!validPass.test(pass)) {
+    msg.textContent = "Mật khẩu không hợp lệ";
+    return;
+  }
+
+  localStorage.setItem("user",
+    JSON.stringify({ email })
+  );
+  msg.textContent = "Đăng ký thành công!";  
+
+});
+</script>
+  <a href="c:\Users\nhatn\Downloads\BaiTap14.html.html">Home</a>
+  <a href="c:\Users\nhatn\Downloads\BaiTap14.html.html">Bài tập 14</a>
+</nav>

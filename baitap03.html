@@ -1,0 +1,22 @@
+<h1 id="timer">10:00</h1>
+
+<script>
+let time = 600;
+const timer = document.getElementById("timer");
+
+const interval = setInterval(() => {
+  time--;
+  const m = String(Math.floor(time / 60)).padStart(2,"0");
+  const s = String(time % 60).padStart(2,"0");
+  timer.textContent = `${m}:${s}`;
+
+  if (time <= 60) timer.style.color = "red";
+  if (time <= 0) {
+    clearInterval(interval);
+    alert("Hết giờ!");
+  }
+}, 1000);
+</script>
+  <a href="c:\Users\nhatn\Downloads\BaiTap14.html.html">Home</a>
+  <a href="c:\Users\nhatn\Downloads\BaiTap14.html.html">Bài tập 14</a>
+</nav>
